@@ -9,10 +9,16 @@ import alphabet from "../app/fonts/alphabet-2dd8e6ce.png";
 import redinc from "../app/fonts/red-inc-e83de883.png";
 import { RainbowButton } from "./ui/rainbow-button";
 import { ChevronUp } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Body() {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
+  const router = useRouter();
+
+  const toLogin = () => {
+    router.push("https://everythinggreen.org/login");
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -81,10 +87,10 @@ export default function Body() {
 
         <motion.h2
           variants={itemVariants}
-          className="text-4xl font-extrabold text-center text-green-600 mb-20"
+          className="text-4xl font-extrabold text-center text-teal-600 mb-20"
         >
           sustainable
-        <br />
+          <br />
           example websites
         </motion.h2>
 
@@ -112,7 +118,9 @@ export default function Body() {
                 height={200}
                 className="mb-4 rounded-lg shadow-xl"
               />
-              <h3 className="font-semibold text-black text-lg mb-2">Facebook</h3>
+              <h3 className="font-semibold text-black text-lg mb-2">
+                Facebook
+              </h3>
               <p className="text-gray-600">0.21gm/per visit</p>
             </div>
           </div>
@@ -125,7 +133,9 @@ export default function Body() {
                 height={200}
                 className="mb-4 rounded-lg shadow-xl"
               />
-              <h3 className="font-semibold text-black text-lg mb-2">Alphabet</h3>
+              <h3 className="font-semibold text-black text-lg mb-2">
+                Alphabet
+              </h3>
               <p className="text-gray-600">0.094gm/per visit</p>
             </div>
             <div className="text-center hover:scale-105 transition-all ease-linear">
@@ -156,7 +166,7 @@ export default function Body() {
           animate={isVisible ? "visible" : "hidden"}
           className="flex justify-center items-center -my-20"
         >
-          <RainbowButton>
+          <RainbowButton onClick={toLogin}>
             <ChevronUp />
             <p className="font-bold">&nbsp;Test Now</p>
           </RainbowButton>
