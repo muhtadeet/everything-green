@@ -141,14 +141,14 @@ export default function Footer() {
                   Contact Us
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#"
                   className="hover:text-gray-300 transition-all ease-linear"
                 >
                   Login
                 </a>
-              </li>
+              </li> */}
             </ul>
           </nav>
           <div className="flex-grow ml-8">
